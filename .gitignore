@@ -1,0 +1,14 @@
+# Build directories
+/build/
+/cmake-build-*/
+
+# IDE
+/.idea/
+*.iml
+.mcp.json
+
+# Checkpoints and artifacts
+*.aiayn
+*.ckpt
+*.o
+*.out
