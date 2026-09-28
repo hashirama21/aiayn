@@ -114,11 +114,11 @@ reduced to 1,000, 44.6 M parameters) take about 1.2 s each for two 8-token examp
 * **Learning.** Copy and reverse are solved to > 90 % on unseen inputs, and training is bit-for-bit deterministic for a given seed.
 * **Checkpoints and validation.** Round trip, truncated and foreign files rejected, invalid hyper-parameters and inputs throw.
 
-The tests themselves were validated by mutation: `python3 tools/mutation_check.py` injects 18 classic bugs one at a time
+The tests themselves were validated by mutation: `python3 tools/mutation_check.py` injects 19 classic bugs one at a time
 (missing `1/sqrt(d_k)`, missing embedding scale, dropped residual, non-causal decoder, ignored padding mask, wrong softmax or
 layer-norm backward, wrong positional encoding, wrong label smoothing, Adam without bias correction, wrong schedule exponent,
 untied output gradient, missing ReLU, over-eager beam termination, wrong length penalty, unscaled dropout, swapped cross-attention
-operands...) and all 18 are detected. The first run missed one (a too-eager early-termination bound in beam search); the test
+operands...) and all 19 are detected. The first run missed one (a too-eager early-termination bound in beam search); the test
 was strengthened until it was caught.
 
 ## Scope and limitations
